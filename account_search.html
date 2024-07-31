@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">   
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link rel="stylesheet" href="style_search.css">
+    <link rel="icon" href="https://bileco36thagma.ddns.net/2024AGMA/icon.ico">
+    <title>36th AGMA Registration Form</title>
+</head>
+<body>
+    
+    <!-- Container Start -->
+    <div id="container"></div>
+       
+        <!-- Form Wrap Start   -->
+            <div class="form-wrap">
+                <div id="banner-div">
+                    <img name="agma-banner" id="agma-banner" style='height: 100%; width: 100%; object-fit: fill' src="https://bileco36thagma.ddns.net/2024AGMA/agma_banner_2024.png" alt>
+                </div>
+                <h2>Registration Form</h2>
+                <p id="message-1">Please fill all required information to register</p>
+                <!-- Form Start -->
+                <form>
+                    <div class="form-group" id="grp_account_number">
+                        <label for="account-number">BILECO Primary Account Number</label>
+                        <div id="container_input">
+                            <input type="text" maxlength="12" name="account_number" id="account-number">
+                            <a href="#"><img src="https://bileco36thagma.ddns.net/2024AGMA/scan.jpg" id="img_qr" style="width:38px; height:38px;"></a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div style="width: 100%" id="reader"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-number">Contact Number</label>
+                        <input type="tel" maxlength="11" name="contact_number" id="contact-number">
+                    </div>
+                
+                    <button type="button" name="check_account" id="check_account">Next</button>
+                    <p class="bottom-text">By clicking the Next button, you agree to our  <a 
+                        href="https://bileco36thagma.ddns.net/2024AGMA/terms_and_con.html">
+                        Term & Condition</a> and <a href="https://bileco36thagma.ddns.net/2024AGMA/privacy_policy.html">Privacy 
+                        Policy</a></p>
+                </form>
+                <!-- Form Close -->
+            
+            </div>
+        <!-- Form Wrap Close   -->
+        
+    <!-- Container Start -->
+    <script src="js/account_check.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/html5-qrcode.min.js"></script>
+</body>
+</html>

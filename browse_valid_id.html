@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">  
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link rel="stylesheet" href="style_valid_id.css">
+    <link rel="icon" href="https://bileco36thagma.ddns.net/2024AGMA/icon.ico">
+    <title>36th AGMA Registration Form</title>
+</head>
+<body>
+    <div id="overlay">
+    </div>
+    <!-- Container Start -->
+    <div id="container"></div>
+        <!-- Form Wrap Start   -->
+        <div id="ring-loading">Processing
+            <span></span>
+        </div>
+        
+        <div class="form-wrap">
+            
+            <p>Please select a photo of your Valid ID</p>
+            <p>Must show the same signature and name provided with the account</p>
+            <!-- Form Start -->
+            <form>
+                
+                <div class="form-group">
+                    <label for="img_valid_id">Valid ID of Account Holder</label>
+                    <img name="img_valid_id" id="img_valid_id" src="https://bileco36thagma.ddns.net/2024AGMA/val_id_sample.jpg" alt>
+                    <input type="file" id="btn_browse" name="btn_browse" accept=".jpg, .png, .jpeg|image/*" onchange="document.getElementById('img_valid_id').src = window.URL.createObjectURL(this.files[0])">
+                    
+                </div>
+                
+                <button type="button" name="check_id" id="check_id">Register</button>
+                
+                
+            </form>
+            
+            <!-- Form Close -->
+           
+        </div>
+        <!-- Form Wrap Close   -->
+    <!-- Container Start -->
+    <script src="js/browse_id.js"></script>
+    <script src="js/jquery.min.js"></script>
+</body>
+</html>

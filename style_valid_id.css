@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+
+
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 480px;
+
+
+   
+    
+}
+
+body{
+    font-family: 'poppins';
+    background-color: #ecedef;
+    line-height: 1.8;
+    height: auto;
+
+    background: url(https://bileco36thagma.ddns.net/2024AGMA/bg_2024.png) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+    
+    
+}
+
+
+
+a{
+    text-decoration: none;
+
+}
+
+#container{
+    max-width: 480px;
+    
+    margin-bottom: 30px auto;
+    margin-right: 30px auto;
+    margin-left: 30px auto;
+    margin-top: 0px auto;
+    padding: 20px;
+
+    
+}
+#overlay{
+   
+    background: rgba(1, 2, 51, 0.7);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    z-index:1000;
+}
+
+#ring-loading{
+    z-index: 1000;
+    position: absolute;
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:150px;
+    height:150px;
+    background:transparent;
+    border:3px solid #3c3c3c;
+    border-radius:50%;
+    text-align:center;
+    line-height:150px;
+    font-family: 'poppins';
+    font-size:15px;
+    color:#CA0002;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    text-shadow:0 0 10px #CA0002;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+
+
+
+#ring-loading:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #CA0002;
+  border-right:3px solid #CA0002;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+span
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+span:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#CA0002;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #CA0002;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+
+.form-wrap{
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    color: #333;
+    border-top: 4px solid #AA8E41;
+    border-radius: 0.5px;
+
+
+}
+
+.form-wrap h1,
+.form-wrap p{
+    text-align: center;
+    
+
+}
+
+.form-wrap .form-group{
+    margin-top: 5px;
+ 
+}
+
+
+.form-wrap .form-group label{
+    display: block;
+    color: #666;
+}
+
+.form-wrap .form-group input{
+
+    width: 100%;
+    padding: 10px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    font-family: 'poppins';
+    text-align: center;
+    
+}
+#container_input {
+    width: 100%;
+    font-family: 'poppins';
+    text-align: center;
+
+    position: relative;
+  }
+#img_qr {
+    position: absolute;
+    right: 1px;  
+    }
+#img_valid_id {
+    object-fit: fill;
+
+}
+
+
+
+
+
+.form-wrap .form-group canvas{
+    width: 100%;
+    height: 400px;
+    padding: 0px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+}
+
+.form-wrap .form-group img{
+    width: 100%;
+    height: 400px;
+    padding: 0px;
+    border: #666 1px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+    object-fit: scale-down;
+}
+
+
+
+.form-wrap button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #AA8E41;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #AA8E41;
+    font-size: 15px;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.form-wrap button:hover{
+    background-color: #0F2B7D;
+    transition: 1s;
+
+}
+
+.form-wrap .bottom-text{
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+
+footer{
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+footer a{
+    color:  #AA8E41;
+
+}

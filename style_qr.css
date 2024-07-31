@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 480px;
+    
+}
+
+body{
+    font-family: 'poppins';
+    background-color: #ecedef;
+    line-height: 1.8;
+    height: auto;
+    overflow-x: hidden;
+
+    background: url(https://bileco36thagma.ddns.net/2024AGMA/bg_2024.png) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+}
+
+a{
+    text-decoration: none;
+
+}
+
+#generated_qr{
+
+    background: rgba(255, 255, 255, 1);
+    height: fit-content;
+}
+
+#container{
+    max-width: 480px;
+    
+    margin-bottom: 30px auto;
+    margin-right: 30px auto;
+    margin-left: 30px auto;
+    margin-top: 0px auto;
+    padding: 20px;
+
+
+}
+
+
+
+.form-wrap{
+    background: rgba(1, 2, 51, 0.7);
+    padding: 15px;
+    color: #333;
+    border-top: 4px solid #AA8E41;
+    border-radius: 0.5px;
+}
+
+
+
+
+.form-wrap h1,
+.form-wrap p{
+    text-align: center;
+    color: #ecedef;
+}
+
+.form-wrap .form-group{
+    margin-top: 5px;
+    margin: auto;
+}
+
+
+.form-wrap .form-group label{
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.form-wrap .form-group #stub-number{
+    width: 100%;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    font-family: 'oswald';
+    font-size: 40px;
+    text-align: center;
+}
+
+.form-wrap .form-group input{
+    width: 100%;
+    padding: 2px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    font-family: 'poppins';
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+.form-wrap .form-group div{
+    margin: 10px auto;
+    width: 100%;
+    height:100%;
+    max-width: 480px;
+    padding: 0px;
+    border: #666 1px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+    
+}
+
+
+
+.form-wrap button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #AA8E41;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #AA8E41;
+    font-size: 15px;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.form-wrap button:hover{
+    background-color: #0F2B7D;
+    transition: 1s;
+
+}
+
+.form-wrap .bottom-text{
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+
+footer{
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+footer a{
+    color:  #AA8E41;
+
+}

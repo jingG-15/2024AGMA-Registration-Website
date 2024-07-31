@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">   
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://bileco36thagma.ddns.net/2024AGMA/icon.ico">
+    <title>36th AGMA Registration Form</title>
+</head>
+<body>
+   
+    <!-- Container Start -->
+    <div id="container"></div>
+        <!-- Form Wrap Start   -->
+        <div class="form-wrap">
+            <p>Please enter BILECO Account Holder's Signature</p>
+            <!-- Form Start -->
+            <form>
+               
+                <div class="form-group">
+                    <label for="signature-pad">Signature</label>
+                    <canvas name="signaturedata" id="signature-pad" ></canvas>
+                </div>
+                
+                <button name="clr_sign" id="clr_sign">Clear Signature</button>
+
+                <button type="button" name="next_process" id="next_process">Next</button>
+               
+            </form>
+            <!-- Form Close -->
+           
+        </div>
+        <!-- Form Wrap Close   -->
+    <!-- Container Start -->
+    <script src="js/signature_pad.umd.js"></script>
+    <script src="js/signature_page.js"></script>
+</body>
+</html>
