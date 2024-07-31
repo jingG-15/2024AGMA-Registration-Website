@@ -1,5 +1,5 @@
 <?php
-    $con=mysqli_connect("localhost","jingG_15","haPPymeals","agma_2024");
+    $con=mysqli_connect("localhost","","","agma_2024");
 	
 	
 	if (mysqli_connect_errno($con)) {
