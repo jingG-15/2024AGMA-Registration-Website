@@ -20,21 +20,7 @@ document.getElementById('check_id').addEventListener('click', function () {
         document.getElementById('overlay').style.visibility = "visible";
         document.getElementById('ring-loading').style.visibility = "visible";
 
-        // var randddd = makeid(1);
-        // var urrrl;
-        // var usrmmm;
-
-        // if(randddd == '1'){
-
-        //     usrmmm = 'jingG_15';
-        //     urrrl = 'https://bileco36thagma.ddns.net/2024AGMA/php_scripts/InsertNewMCOReg.php';
-       
-        // }else{
-
-        //     usrmmm = 'Guest';
-        //     urrrl = 'https://bileco36thagma.ddns.net/2024AGMA/php_scripts/InsertNewPreReg.php';
-        
-        // }
+      
 
 
         usrmmm = 'Guest';
