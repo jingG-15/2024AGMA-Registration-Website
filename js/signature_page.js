@@ -1,5 +1,5 @@
 window.onload=function(){
-
+  signaturePad.clear();
   if(localStorage.getItem("Valid_Account_Number") === null){
       window.location.replace("https://bileco36thagma.ddns.net/2024AGMA/account_search.html","_self");
   }
