@@ -85,7 +85,7 @@ document.getElementById('check_id').addEventListener('click', function () {
 
 
 document.getElementById('btn_browse').addEventListener('change', (e) => {
-    const file = e.target.files[0];
+    const file = convertHeicToJpg(e.target.files[0]);
     const reader = new FileReader();
     reader.onloadend = () => {
       // convert file to base64 String
@@ -124,3 +124,38 @@ function makeid(length) {
    }
    return result;
 }
+
+function convertHeicToJpg(input)
+    {
+        var fileName = $(input).val();
+        var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+        if(fileNameExt == "heic") {
+            var blob = $(input)[0].files[0]; //ev.target.files[0];
+            heic2any({
+                blob: blob,
+                toType: "image/jpg",
+            })
+                .then(function (resultBlob) {
+                   
+                    let file = new File([resultBlob], "heic"+".jpg",{type:"image/jpeg", lastModified:new Date().getTime()});
+                    return file;
+                    
+                    // var url = URL.createObjectURL(resultBlob);
+                    // $(input).parent().find(".upload-file").css("background-image", "url("+url+")"); //previewing the uploaded picture
+                    // //adding converted picture to the original <input type="file">
+                    // let fileInputElement = $(input)[0];
+                    // let container = new DataTransfer();
+                    // let file = new File([resultBlob], "heic"+".jpg",{type:"image/jpeg", lastModified:new Date().getTime()});
+                    // container.items.add(file);
+
+                    // fileInputElement.files = container.files;
+                    // console.log("added");
+                })
+                .catch(function (x) {
+                    console.log(x.code);
+                    console.log(x.message);
+                });
+        }else{
+            return input;
+        }
+    }

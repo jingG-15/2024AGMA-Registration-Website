@@ -96,7 +96,7 @@ document.getElementById('check_account').addEventListener('click', function () {
         account_num_safe = false;
     };
 
-    if (typeof contact_number !== 'undefined' && contact_number) {
+    if (typeof contact_number !== 'undefined' && contact_number && contact_number.length == 11) {
         contact_num_safe = true;
     } else {
         contact_num_safe = false;
