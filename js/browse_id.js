@@ -1,3 +1,4 @@
+
 window.onload=function(){
 
     if(localStorage.getItem("Valid_Account_Number") === null){
@@ -84,20 +85,9 @@ document.getElementById('check_id').addEventListener('click', function () {
 });
 
 
-document.getElementById('btn_browse').addEventListener('change', (e) => {
-    const file = convertHeicToJpg(e.target.files[0]);
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      // convert file to base64 String
-      const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
-      // store file
-      localStorage.setItem('Provided_ID', base64String);
-      // display image
-      //document.body.style.background = `url(data:image/png;base64,${base64String})`;
-    };
-    reader.readAsDataURL(file);
-  });
-
+document.getElementById('btn_browse').addEventListener('change', function() {
+    convertHeicToJpg(this);
+});
 
 
 function getBase64Image(img) {
@@ -125,37 +115,76 @@ function makeid(length) {
    return result;
 }
 
+
 function convertHeicToJpg(input)
     {
+        //document.getElementById('img_valid_id').src = URL.createObjectURL(input.files[0]);
+       
         var fileName = $(input).val();
+        
         var fileNameExt = fileName.substr(fileName.lastIndexOf('.') + 1);
+        
         if(fileNameExt == "heic") {
+            document.getElementById('overlay').style.visibility = "visible";
+            document.getElementById('ring-loading').style.visibility = "visible";
+        
             var blob = $(input)[0].files[0]; //ev.target.files[0];
             heic2any({
                 blob: blob,
-                toType: "image/jpg",
+                toType: "image/jpeg",
             })
                 .then(function (resultBlob) {
-                   
-                    let file = new File([resultBlob], "heic"+".jpg",{type:"image/jpeg", lastModified:new Date().getTime()});
-                    return file;
-                    
-                    // var url = URL.createObjectURL(resultBlob);
-                    // $(input).parent().find(".upload-file").css("background-image", "url("+url+")"); //previewing the uploaded picture
-                    // //adding converted picture to the original <input type="file">
-                    // let fileInputElement = $(input)[0];
-                    // let container = new DataTransfer();
-                    // let file = new File([resultBlob], "heic"+".jpg",{type:"image/jpeg", lastModified:new Date().getTime()});
-                    // container.items.add(file);
 
-                    // fileInputElement.files = container.files;
-                    // console.log("added");
+
+                    var url = window.URL.createObjectURL(resultBlob);
+                    //$(input).parent().find(".img_valid_id").css("background-image", "url("+url+")"); //previewing the uploaded picture
+                    
+                    document.getElementById('img_valid_id').src = url;
+             
+                    var reader = new FileReader();
+                    reader.onload = function() {
+                        //const base64String = reader.result.toString().substr(reader.result.toString().indexOf(',') + 1);
+                        // store file
+
+                        let buffer = reader.result;
+
+                        // Converting ArrayBuffer to Base64 string
+                        var base64 = btoa(
+                            new Uint8Array(buffer)
+                              .reduce((data, byte) => data + String.fromCharCode(byte), '')
+                          );
+                        localStorage.setItem('Provided_ID', base64);
+
+                        document.getElementById('overlay').style.visibility = "hidden";
+                        document.getElementById('ring-loading').style.visibility = "hidden";
+                       
+                        
+                    };
+                    reader.readAsArrayBuffer(resultBlob);
+
                 })
                 .catch(function (x) {
                     console.log(x.code);
                     console.log(x.message);
+                    
                 });
         }else{
-            return input;
+            document.getElementById('img_valid_id').src = window.URL.createObjectURL($(input)[0].files[0]);
+            
+            const fileAsIs = $(input)[0].files[0];
+            
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                // convert file to base64 String
+                const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+                // store file
+                localStorage.setItem('Provided_ID', base64String);
+
+                document.getElementById('overlay').style.visibility = "hidden";
+                document.getElementById('ring-loading').style.visibility = "hidden";
+                // display image
+                //document.body.style.background = `url(data:image/png;base64,${base64String})`;
+            };
+            reader.readAsDataURL(fileAsIs);
         }
     }
