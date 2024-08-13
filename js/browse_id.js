@@ -75,11 +75,6 @@ document.getElementById('check_id').addEventListener('click', function () {
         });
         
 
-
-
-
-
-
     }
 
 });
@@ -168,7 +163,7 @@ function convertHeicToJpg(input)
                     console.log(x.message);
                     
                 });
-        }else{
+        }else if(fileNameExt == "jpg" || fileNameExt == "png" || fileNameExt == "jpeg" || fileNameExt == "JPG" || fileNameExt == "PNG" || fileNameExt == "JPEG"){
             document.getElementById('img_valid_id').src = window.URL.createObjectURL($(input)[0].files[0]);
             
             const fileAsIs = $(input)[0].files[0];
@@ -186,5 +181,9 @@ function convertHeicToJpg(input)
                 //document.body.style.background = `url(data:image/png;base64,${base64String})`;
             };
             reader.readAsDataURL(fileAsIs);
+        }else{
+            document.getElementById('btn_browse').value = null;
+            document.getElementById('img_valid_id').src = "https://bileco36thagma.ddns.net/2024AGMA/val_id_sample.jpg";
+            alert("File must be an image format (e.g. png, jpg, jpeg, heic)");
         }
     }
